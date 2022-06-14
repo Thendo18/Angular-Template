@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { componentone } from './components/componentone/componentone.component';
-import { componenttwo } from './components/componenttwo/componenttwo.component';
-import { page1 } from '././/pages//page1/page1.component';
-import { page2 } from '././/pages//page2/page2.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { RegisterPageComponent } from './pages/register-page/register-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'page1', pathMatch: 'full' },
-  { path: 'componentone', component: componentone },
-  { path: 'componenttwo', component: componenttwo },
-  { path: 'page1', component: page1 },
-  { path: 'page2', component: page2 },
-  { path: '', redirectTo: 'page1', pathMatch: 'full' },
-  { path: '**', redirectTo: 'page1' },
+  { path: '', redirectTo: 'home-page', pathMatch: 'full' },
+  { path: 'home-page', component: HomePageComponent },
+  { path: 'landing-page', component: LandingPageComponent },
+  { path: 'login-page', component: LoginPageComponent },
+  { path: 'register-page', component: RegisterPageComponent },
+  { path: 'nav-bar', component: NavBarComponent },
+  { path: 'footer', component: FooterComponent },
+  { path: '', redirectTo: 'home-page', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home-page' },
 ];
 
 @NgModule({
