@@ -6,6 +6,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home-page', pathMatch: 'full' },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'nav-bar', component: NavBarComponent },
   { path: 'footer', component: FooterComponent },
   { path: '', redirectTo: 'home-page', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home-page' },
+  {path: '404', component: NotfoundComponent},
+  { path: '**', redirectTo: '/404' },
 ];
 
 @NgModule({
