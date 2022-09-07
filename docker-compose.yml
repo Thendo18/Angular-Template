@@ -4,7 +4,7 @@ version: '3.7' # specify docker-compose version
 services:
   angular: # name of the first service
     hostname: localhost
-    build: frontend # specify the directory of the Dockerfile
+    build: angular-app # specify the directory of the Dockerfile
     ports:
       - "8181:80" # specify port forewarding
   
@@ -17,7 +17,7 @@ services:
       NODE_ENV: development
       PORT: 5432
     ports:
-      - "4000:5432"
+      - "3000:5432"
     command: npm run dev
     volumes:
       - .:/app/

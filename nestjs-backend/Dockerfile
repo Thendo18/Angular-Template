@@ -1,11 +1,11 @@
-FROM node:lts
+FROM node:8-alpine
 
 WORKDIR /app
-COPY ./package*.json ./
-RUN npm ci
-COPY . .
-RUN chown -R node:node /app
-USER node
+ADD package.json /app/package.json
+RUN npm config set registry http://registry.npmjs.org
+RUN npm install
 
-EXPOSE 4000
-CMD npm start
+ADD . /app
+
+EXPOSE 3000
+CMD ["npm", "run", "start"]
